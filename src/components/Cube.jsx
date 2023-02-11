@@ -28,6 +28,7 @@ export const Cube = ({ id, position, texture }) => {
       onClick={(e) => {
         e.stopPropagation()
         const clickedFace = Math.floor(e.faceIndex/2)
+        console.log(clickedFace)
         const {x, y, z} = ref.current.position
         if (e.altKey) {
           removeCube(id);
@@ -42,7 +43,7 @@ export const Cube = ({ id, position, texture }) => {
         } else if (clickedFace === 4) {
           addCube(x, y, z + 1);
         } else if (clickedFace === 5) {
-          addCube(x - 1, y, z);
+          addCube(x , y, z - 1);
         }
       
       }}

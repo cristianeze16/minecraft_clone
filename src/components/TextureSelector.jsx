@@ -9,7 +9,7 @@ export const TextureSelector = () =>{
  
   const [texture,setTexture] = useStore(state =>[state.texture, state.setTexture])
 
-  const { dirt, grass, glass, wood, log } = useKeyboard();
+  const { dirt, grass, glass, wood, log,water } = useKeyboard();
 
   useEffect(()=>{
     const visibilityTimeout= setTimeout(()=>{
@@ -29,6 +29,7 @@ export const TextureSelector = () =>{
       glass,
       wood,
       log,
+      water,
     };
     const selectedTexture = Object.entries(options).find(([texture, isEnabled]) => isEnabled) 
     if(selectedTexture){
@@ -36,7 +37,7 @@ export const TextureSelector = () =>{
       setTexture(textureName)
 
     }
-  }, [dirt, grass, glass, wood, log]);
+  }, [dirt, grass, glass, wood, log, water]);
   
  
   return (
