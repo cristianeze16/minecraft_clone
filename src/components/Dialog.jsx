@@ -5,12 +5,13 @@ import Minecraft from "../assets/fonts/Minecraft_Ten_Regular.json";
 
 extend({ TextGeometry });
 
-export default function Dialog() {
+export default function Dialog({msj,position}) {
   const font = new FontLoader().parse(Minecraft);
 
   return (
-    <mesh position={[-0.3, 1, -3]}>
-      <textGeometry args={["Hola", { font, size: 0.2, height: 0.1 }]} />
+    <mesh position={position}>
+    {/* <mesh position={[-0.3, 1, -3]}> */}
+      <textGeometry args={[`${msj}`, { font, size: 0.2, height: 0.1 }]} />
       <meshLambertMaterial attach="material" color={"black"} />
     </mesh>
   );

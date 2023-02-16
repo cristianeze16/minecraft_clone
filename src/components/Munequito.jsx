@@ -5,6 +5,11 @@ Command: npx gltfjsx@6.1.4 munequito.gltf
 
 import React, { useState } from "react";
 import { useGLTF } from "@react-three/drei";
+import Dialog from "../components/Dialog";
+
+
+
+
 export function Munequito() {
   const { nodes, materials } = useGLTF("/munequito.gltf");
 
@@ -64,6 +69,7 @@ export function Munequito() {
           scale={[0.05, 0.13, 0.05]}
         />
       </group>
+      <Dialog msj={"hola"} position={[-0.3, 1, -3]}/>
     </>
   );
 }
