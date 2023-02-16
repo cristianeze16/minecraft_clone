@@ -1,17 +1,24 @@
-import { Physics } from '@react-three/cannon'
-import { Sky } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
-import { Ground } from './components/Ground.jsx'
-import { Player } from './components/Player.jsx'
-import { FPV as Fpv } from './components/FPV.jsx'
-import { Cubes } from './components/Cubes.jsx'
-import { TextureSelector } from './components/TextureSelector.jsx'
+import { Physics } from "@react-three/cannon";
+import { Sky } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { Ground } from "./components/Ground.jsx";
+import { Player } from "./components/Player.jsx";
+import { FPV as Fpv } from "./components/FPV.jsx";
+import { Cubes } from "./components/Cubes.jsx";
+import { TextureSelector } from "./components/TextureSelector.jsx";
 import { Menu } from "./components/Menu.jsx";
+import {Munequito} from "./components/Munequito.jsx"
+import  Dialog  from "./components/Dialog";
+import { useStore } from "./hooks/useStore";
 
 
 
 
-function App () {
+
+
+function App() {
+
+ 
   return (
     <>
       <Canvas>
@@ -19,9 +26,11 @@ function App () {
         <ambientLight intensity={0.5} />
         <Fpv />
         <Physics>
+          <Munequito />
           <Player />
           <Cubes />
           <Ground />
+      <Dialog />
         </Physics>
       </Canvas>
 
@@ -32,4 +41,4 @@ function App () {
   );
 }
 
-export default App
+export default App;
