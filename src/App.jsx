@@ -8,7 +8,6 @@ import { Cubes } from "./components/Cubes.jsx";
 import { TextureSelector } from "./components/TextureSelector.jsx";
 import { Menu } from "./components/Menu.jsx";
 import {Munequito} from "./components/Munequito.jsx"
-import  Dialog  from "./components/Dialog";
 import { useStore } from "./hooks/useStore";
 
 
@@ -30,7 +29,7 @@ function App() {
           <Player />
           <Cubes />
           <Ground />
-      <Dialog />
+      
         </Physics>
       </Canvas>
 

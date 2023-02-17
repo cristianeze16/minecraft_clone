@@ -69,7 +69,7 @@ export function Munequito() {
           scale={[0.05, 0.13, 0.05]}
         />
       </group>
-      <Dialog msj={"hola"} position={[-0.3, 1, -3]}/>
+      <Dialog msj={"hola soy Cristian bienvenido a mi portafolio"} position={[-1.5, 1, -3]} size= {0.1} height= {0} color = {"black"}/>
     </>
   );
 }
