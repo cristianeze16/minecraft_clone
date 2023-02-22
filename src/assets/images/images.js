@@ -4,4 +4,3 @@ export { default as logImg } from "./log.jpg";
 export { default as glassImg } from "./glass.png";
 export { default as woodImg } from "./wood.png";
 export { default as waterImg } from "./water.jpg";
-

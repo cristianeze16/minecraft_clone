@@ -7,17 +7,12 @@ import { FPV as Fpv } from "./components/FPV.jsx";
 import { Cubes } from "./components/Cubes.jsx";
 import { TextureSelector } from "./components/TextureSelector.jsx";
 import { Menu } from "./components/Menu.jsx";
-import {Munequito} from "./components/Munequito.jsx"
-import { useStore } from "./hooks/useStore";
-
-
-
-
-
+import { Munequito } from "./components/Munequito.jsx";
+import { CubeProjects } from "./components/CubeProjects";
+import Dialog  from "./components/Dialog.jsx"
+ 
 
 function App() {
-
- 
   return (
     <>
       <Canvas>
@@ -29,7 +24,35 @@ function App() {
           <Player />
           <Cubes />
           <Ground />
-      
+          <Dialog
+            msj={
+              "Algunos proyectos presiona  " +
+              " CTRL" +
+              "+" +
+              " click " +
+              "  para visitarlos "
+            }
+            position={[-5.2, 2.5, -3]}
+            size={0.1}
+            height={0}
+            color={"black"}
+          />
+          <CubeProjects
+            texture={"motorX"}
+            position={[-3, 0.2, -3]}
+            page={"https://motorx.vercel.app/"}
+           
+          />
+          <CubeProjects
+            texture={"mighty"}
+            position={[-4.5, 0.2, -3]}
+            page={"https://cristianeze16.github.io/mdhlc-hermosa/"}
+          />
+          <CubeProjects
+            texture={"myTinerary"}
+            position={[-3.7, 1.5, -3]}
+            page={"https://mytineraryteamperro.vercel.app/"}
+          />
         </Physics>
       </Canvas>
 

@@ -1,5 +1,6 @@
 import { useStore } from "../hooks/useStore";
 import {Cube} from './Cube.jsx'
+
 export const Cubes = ()=>{
   const [ cubes ] = useStore( state => [state.cubes])
 

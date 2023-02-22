@@ -5,8 +5,8 @@ import {
   logImg,
   glassImg,
   woodImg,
-  waterImg
-
+  waterImg,
+ 
 } from './images.js'
 
 
@@ -17,7 +17,6 @@ const glassTexture = new TextureLoader().load(glassImg)
 const woodTexture = new TextureLoader().load(woodImg)
 const groundTexture = new TextureLoader().load(grassImg)
 const waterTexture = new TextureLoader().load(waterImg);
-
 
 groundTexture.magFilter = NearestFilter;
 grassTexture.magFilter = NearestFilter;
