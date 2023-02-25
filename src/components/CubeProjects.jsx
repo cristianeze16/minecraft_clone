@@ -6,9 +6,8 @@ import { useSpring, animated, config } from "@react-spring/three";
 
 
 export const CubeProjects = ({ position, texture,page }) => {
-  const myMesh = useRef()
   const [isHovered, setIsHovered] = useState(false);
-const [rotate, setRotate] = useState(0);
+
 
 
   useFrame(({ clock }) => {
