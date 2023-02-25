@@ -9,6 +9,8 @@ import { TextureSelector } from "./components/TextureSelector.jsx";
 import { Menu } from "./components/Menu.jsx";
 import { Munequito } from "./components/Munequito.jsx";
 import { CubeProjects } from "./components/CubeProjects";
+import {Linkedin } from "./components/Linkedin.jsx"
+import { Github } from "./components/Github.jsx";
 import Dialog  from "./components/Dialog.jsx"
  
 
@@ -41,7 +43,6 @@ function App() {
             texture={"motorX"}
             position={[-3, 0.2, -3]}
             page={"https://motorx.vercel.app/"}
-           
           />
           <CubeProjects
             texture={"mighty"}
@@ -53,6 +54,21 @@ function App() {
             position={[-3.7, 1.5, -3]}
             page={"https://mytineraryteamperro.vercel.app/"}
           />
+          <Dialog
+            msj={
+              "Mis Redes " +
+              " CTRL" +
+              "+" +
+              " click " +
+              "  para visitarlas "
+            }
+            position={[6, 2.2, -3]}
+            size={0.1}
+            height={0}
+            color={"black"}
+          />
+          <Linkedin />
+          <Github />
         </Physics>
       </Canvas>
 
