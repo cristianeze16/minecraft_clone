@@ -64,7 +64,7 @@ export function Munequito() {
         />
       </group>
       <Dialog
-        msj={"hola soy Cristian bienvenido a mi portafolio"}
+        msj={"hola soy Cristian bienvenido a mi portafolio Instrucciones:"}
         position={[0, 2.2, -3]}
         size={0.1}
         height={0}
@@ -72,7 +72,7 @@ export function Munequito() {
       />{" "}
       <Dialog
         msj={
-          "Instrucciones: Con las letras w,a,s,d te mueves up,left,down,right y con la barra espaciadora saltas. "
+          "- Con las letras w,a,s,d te mueves up,left,down,right y con la barra espaciadora saltas. "
         }
         position={[-1.5, 2, -3]}
         size={0.1}
@@ -81,7 +81,7 @@ export function Munequito() {
       />
       <Dialog
         msj={
-          "Con los numeros del 1 al 6 puedes elegir las cajas para construir"
+          "- Con los numeros del 1 al 6 puedes elegir las cajas para construir"
         }
         position={[-1.5, 1.8, -3]}
         size={0.1}
@@ -89,7 +89,7 @@ export function Munequito() {
         color={"red"}
       />
       <Dialog
-        msj={"Para eliminar cajas debes apuntar y presionar ctrl+click "}
+        msj={"- Para eliminar cajas debes apuntar y presionar ctrl+click "}
         position={[-1.5, 1.6, -3]}
         size={0.1}
         height={0}
