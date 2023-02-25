@@ -20,15 +20,9 @@ export function Munequito() {
         scale={2}
         dispose={null}
         position={[0, -0.5, -3]}
-        onClick={
-          (e)=>{e.stopPropagation()
-          
-          
-          
-
-        }
-        }
-
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
       >
         <mesh
           geometry={nodes.Cara.geometry}
@@ -69,7 +63,45 @@ export function Munequito() {
           scale={[0.05, 0.13, 0.05]}
         />
       </group>
-      <Dialog msj={"hola soy Cristian bienvenido a mi portafolio"} position={[-1.5, 1, -3]} size= {0.1} height= {0} color = {"black"}/>
+      <Dialog
+        msj={"hola soy Cristian bienvenido a mi portafolio"}
+        position={[0, 2.2, -3]}
+        size={0.1}
+        height={0}
+        color={"black"}
+      />{" "}
+      <Dialog
+        msj={
+          "Instrucciones: Con las letras w,a,s,d te mueves up,left,down,right y con la barra espaciadora saltas. "
+        }
+        position={[-1.5, 2, -3]}
+        size={0.1}
+        height={0}
+        color={"red"}
+      />
+      <Dialog
+        msj={
+          "Con los numeros del 1 al 6 puedes elegir las cajas para construir"
+        }
+        position={[-1.5, 1.8, -3]}
+        size={0.1}
+        height={0}
+        color={"red"}
+      />
+      <Dialog
+        msj={"Para eliminar cajas debes apuntar y presionar ctrl+click "}
+        position={[-1.5, 1.6, -3]}
+        size={0.1}
+        height={0}
+        color={"red"}
+      />
+      <Dialog
+        msj={"Espero que te diviertas!!!"}
+        position={[-1.5, 1.4, -3]}
+        size={0.1}
+        height={0}
+        color={"red"}
+      />
     </>
   );
 }
