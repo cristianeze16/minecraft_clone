@@ -17,7 +17,8 @@ export const CubeProjects = ({ position, texture,page }) => {
   });
   const [ref,api] = useBox(() => ({
     type: "Dynamic",
-    position, }),
+    position,
+   }),
    
  );
  

@@ -12,8 +12,7 @@ import { CubeProjects } from "./components/CubeProjects";
 import {Linkedin } from "./components/Linkedin.jsx"
 import { Github } from "./components/Github.jsx";
 import Dialog  from "./components/Dialog.jsx"
- 
-
+import Controls from "./components/Controls.jsx"
 function App() {
   return (
     <>
@@ -56,11 +55,7 @@ function App() {
           />
           <Dialog
             msj={
-              "Mis Redes " +
-              " CTRL" +
-              "+" +
-              " click " +
-              "  para visitarlas "
+              "Mis Redes " + " CTRL" + "+" + " click " + "  para visitarlas "
             }
             position={[6, 2.2, -3]}
             size={0.1}
@@ -71,7 +66,8 @@ function App() {
           <Github />
         </Physics>
       </Canvas>
-
+      <Controls />
+      {/* <h1 className="test">hola</h1> */}
       <div className="pointer">+</div>
       <TextureSelector />
       <Menu />

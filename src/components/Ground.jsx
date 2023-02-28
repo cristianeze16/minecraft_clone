@@ -16,11 +16,14 @@ export function Ground () {
   }
 
   return (
-    <mesh 
-    onClick={handleClickGround}
-    ref={ref}>
-      <planeBufferGeometry attach='geometry' args={[100, 100]} />
-      <meshStandardMaterial attach='material' color='green' map={groundTexture} />
+    <mesh onClick={handleClickGround} ref={ref}>
+      <planeBufferGeometry attach="geometry" args={[100, 100]} />
+      <meshStandardMaterial
+        attach="material"
+        color="green"
+        map={groundTexture}
+      
+      />
     </mesh>
-  )
+  );
 }
