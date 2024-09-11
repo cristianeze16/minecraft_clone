@@ -3,6 +3,12 @@
   font-family: 'Minecraft', sans-serif;
 }
 
+@media (min-width: 1000px) {
+  .hide-on-desktop {
+    display: none;
+  }
+}
+
 html,
 body,
 #root{
