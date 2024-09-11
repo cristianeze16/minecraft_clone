@@ -26,9 +26,9 @@ export const Cube = ({ id, position, texture }) => {
       }}
       ref={ref}
       onClick={(e) => {
+        console.log('e',e)
         e.stopPropagation()
         const clickedFace = Math.floor(e.faceIndex/2)
-        console.log(clickedFace)
         const {x, y, z} = ref.current.position
         if (e.ctrlKey) {
           removeCube(id);

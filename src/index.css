@@ -3,6 +3,12 @@
   font-family: 'Minecraft', sans-serif;
 }
 
+@media (min-width: 1000px) {
+  .hide-on-desktop {
+    display: none;
+  }
+}
+
 html,
 body,
 #root{
@@ -67,4 +73,10 @@ body{
 .menu {
   top: 10px;
   left: 10px;
+}
+
+.test{
+  position: absolute;
+  top:50px;
+  left:50px;
 }
