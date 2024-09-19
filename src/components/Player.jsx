@@ -6,18 +6,14 @@ import { useKeyboard } from "../hooks/useKeyboard.js";
 
 const CHARACTER_SPEED = 4;
 const CHARACTER_JUMP_FORCE = 4;
-const ROTATION_THRESHOLD = 0.1;
+const ROTATION_THRESHOLD = 1;
 const MAX_ROTATION_X = Math.PI / 4; // Limitar la rotación en el eje x a 45 grados
 const MIN_ROTATION_X = -Math.PI / 4; // Limitar la rotación en el eje x a -45 grados
 
+
 export const Player = ({ position, positionWalk }) => {
   const { moveBackward, moveForward, moveLeft, moveRight, jump } = useKeyboard();
-  console.log("playerWalk", positionWalk);
-  // console.log("player", position);
-  const moveBackwardJoystick = positionWalk.y > 0;
-  const moveForwardJoystick = positionWalk.y < 0;
-  const moveLeftJoystick = positionWalk.x < 0;
-  const moveRightJoystick = positionWalk.x > 0;
+
   const { camera } = useThree();
   const [ref, api] = useSphere(() => ({
     mass: 1,
@@ -31,7 +27,7 @@ export const Player = ({ position, positionWalk }) => {
       pos.current = p;
     });
   }, [api.position]);
-  console.log("pos", pos);
+
   const vel = useRef([0, 0, 0]);
   useEffect(() => {
     api.velocity.subscribe((p) => {
@@ -40,18 +36,20 @@ export const Player = ({ position, positionWalk }) => {
   }, [api.velocity]);
 
   useFrame(() => {
-    camera.position.set(pos.current[0], pos.current[1], camera.position.z);
+    camera.position.copy(new Vector3(pos.current[0], pos.current[1], pos.current[2]));
+
     const direction = new Vector3();
 
     const frontVector = new Vector3(
       0,
       0,
-      (moveBackward || moveBackwardJoystick ? 1 : 0) -
-        (moveForward || moveForwardJoystick ? 1 : 0),
+      (moveBackward || positionWalk.y > 0 ? 1 : 0) -
+        (moveForward || positionWalk.y < 0 ? 1 : 0),
     );
 
     const sideVector = new Vector3(
-      (moveLeft || moveLeftJoystick ? 1 : 0) - (moveRight || moveRightJoystick ? 1 : 0),
+      (moveLeft || positionWalk.x < 0 ? 1 : 0) -
+        (moveRight || positionWalk.x > 0 ? 1 : 0),
       0,
       0,
     );
@@ -67,8 +65,6 @@ export const Player = ({ position, positionWalk }) => {
     if (jump && Math.abs(vel.current[1]) < 0.05) {
       api.velocity.set(vel.current[0], CHARACTER_JUMP_FORCE, vel.current[2]);
     }
-
-    // Aplicar umbral mínimo para la rotación de la cámara
     if (Math.abs(position.y) > ROTATION_THRESHOLD) {
       camera.rotation.x -= position.y * 0.0001; // Invertir el valor de position.y
       // Limitar la rotación en el eje x
@@ -81,6 +77,5 @@ export const Player = ({ position, positionWalk }) => {
       camera.rotation.y -= position.x * 0.0001; // Invertir el valor de position.x
     }
   });
-
   return <mesh ref={ref} />;
 };
