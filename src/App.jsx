@@ -21,12 +21,6 @@ function App() {
     const { x, y } = data;
     setPositionWalk({ x, y });
   };
-  console.log("positionWalk", positionWalk);
-
-  const handleStopWalk = () => {
-    setPositionWalk({ x: 0, y: 0 });
-  };
-
   const handleDragCamera = (event, data) => {
     const { x, y } = data;
     setPosition({ x, y });
@@ -36,6 +30,39 @@ function App() {
   const handleStopCamera = () => {
     setPosition({ x: 0, y: 0 });
   };
+
+  const handleMoveForwardStart = () => {
+    setPositionWalk((prev) => ({  y: -1 }));
+  };
+
+  const handleMoveForwardStop = () => {
+    setPositionWalk((prev) => ({ ...prev, y: 0 }));
+  };
+
+  const handleMoveBackwardStart = () => {
+    setPositionWalk((prev) => ({ ...prev, y: 1 }));
+  };
+
+  const handleMoveBackwardStop = () => {
+    setPositionWalk((prev) => ({ ...prev, y: 0 }));
+  };
+
+  const handleMoveLeftStart = () => {
+    setPositionWalk((prev) => ({ ...prev, x: -1 }));
+  };
+
+  const handleMoveLeftStop = () => {
+    setPositionWalk((prev) => ({ ...prev, x: 0 }));
+  };
+
+  const handleMoveRightStart = () => {
+    setPositionWalk((prev) => ({ ...prev, x: 1 }));
+  };
+
+  const handleMoveRightStop = () => {
+    setPositionWalk((prev) => ({ ...prev, x: 0 }));
+  };
+
   return (
     <>
       <Canvas>
@@ -87,12 +114,18 @@ function App() {
         </Physics>
       </Canvas>
       <Controls
-        handleDragWalk={handleDragWalk}
-        handleStopWalk={handleStopWalk}
         handleDragCamera={handleDragCamera}
         handleStopCamera={handleStopCamera}
         positionWalk={positionWalk}
         position={position}
+        handleMoveForwardStart={handleMoveForwardStart}
+        handleMoveForwardStop={handleMoveForwardStop}
+        handleMoveBackwardStart={handleMoveBackwardStart}
+        handleMoveBackwardStop={handleMoveBackwardStop}
+        handleMoveLeftStart={handleMoveLeftStart}
+        handleMoveLeftStop={handleMoveLeftStop}
+        handleMoveRightStart={handleMoveRightStart}
+        handleMoveRightStop={handleMoveRightStop}
       />
       <div className="pointer">+</div>
       <TextureSelector />
