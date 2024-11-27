@@ -48,7 +48,7 @@ function App() {
   };
 
   const handleMoveLeftStart = () => {
-    setPositionWalk((prev) => ({ ...prev, x: -1 }));
+    setPositionWalk((prev) => ({ ...prev, x: 1 }));
   };
 
   const handleMoveLeftStop = () => {
@@ -56,7 +56,7 @@ function App() {
   };
 
   const handleMoveRightStart = () => {
-    setPositionWalk((prev) => ({ ...prev, x: 1 }));
+    setPositionWalk((prev) => ({ ...prev, x: -1 }));
   };
 
   const handleMoveRightStop = () => {
